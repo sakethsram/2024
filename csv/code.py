@@ -23,6 +23,10 @@ def unique(datalist):
             if not (datalist[i][4] == datalist[j][4]) or (datalist[i][4] == datalist[j][5]) or ((datalist[i][5] == datalist[j][4] or datalist[i][5] == datalist[j][5])):
                 unique_list.append(datalist[j])
 
+    
+    
+    
+
     fd2 = open("new.csv", "w", newline='')
     for row in unique_list:
          fd2.write(','.join(row) + '\n')
