@@ -17,14 +17,11 @@ def count_ret_code(dl):
         for row in dl:
             all.append(row[5])
         
-        # Remove the header
-        all.pop(0)  
 
-        for code in all:
-            if code not in unique:
-                unique.append(code)
+        for c in all:
+            if c not in unique:
+                unique.append(c)
 
-        print(unique)
 
         for i in unique:
             c = all.count(i)

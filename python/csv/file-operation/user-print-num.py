@@ -1,7 +1,7 @@
 import csv
 
 def strip(src):
-    datalist = []
+    flag = []
     fd1 = open(src, 'rt')
     fdata = csv.reader(fd1)
     for row in fdata:
@@ -9,18 +9,15 @@ def strip(src):
             row[4] = row[4].replace(' ', '')
         if len(row) > 5 and ' ' in row[5]:
             row[5] = row[5].replace(' ', '')
-        datalist.append(row)
+        flag.append(row)
     fd1.close()
-    return datalist
+    return flag
 
 
-
-
-
-def unique_list(dl):
+def original(flag):
     unique = []
-    with open("new.csv", "w+") as fd:
-        for row in dl:
+    with open("only-unique.csv", "w+") as fd:
+        for row in flag:
             if ( row[4] == row[5]): row.pop(5)        
             t=0
             for i in unique:
@@ -35,5 +32,10 @@ def unique_list(dl):
 
 
 
-strip_data = strip("user.csv")
-unique=unique_list(strip_data)
+
+
+sd = strip("user.csv")
+flag=original(sd)
+
+for i in flag:
+    print(i)

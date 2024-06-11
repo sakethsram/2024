@@ -1,0 +1,6 @@
+ptime = "2018-12-29T10:30:07.119045211Z"
+ctime = "2023-12-29T10:30:07.119045211Z"
+
+Difference
+- Number of days
+- Time (Hours, min, sec)
